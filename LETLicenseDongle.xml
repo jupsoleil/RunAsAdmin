@@ -1,0 +1,10 @@
+<LETdongle id="17S6W1801035053">
+    <optionlist>
+        <algorithms>
+            <algorithm name="ColorBand" />
+        </algorithms>
+        <components>
+            <component name="AMHostBoard" />
+        </components>
+    </optionlist>
+</LETdongle>

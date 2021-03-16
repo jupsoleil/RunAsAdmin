@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2019-10-15 16:02+0200\n"
+"Last-Translator: Jürgen Depicker <jurgen.depicker@let.be>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
+
+msgid "Managed software upgrade report for %s"
+msgstr "Rapport van beheerde software-upgrade voor %s"
+
+msgid "No packages to upgrade"
+msgstr "Geen pakketten om te upgraden"
+
+msgid "SMTP connection failed; check your internet connection."
+msgstr "De SMTP-verbinding is mislukt. Controleer uw internetverbinding."
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Packages to upgrade:"
+msgstr "Pakketten om te upgraden:"
+
+msgid "Check for outdated packages"
+msgstr "Controleer op verouderde pakketten"
+
+msgid "More detail"
+msgstr "Meer detail"
+
+msgid "Quit"
+msgstr "Afsluiten"
+
+msgid "Checking for outdated packages; please wait..."
+msgstr "Controleren op verouderde pakketten; een ogenblik geduld..."
+
+msgid ""
+"Upgrading all outdated packages; please wait and don't close the program..."
+msgstr ""
+"Upgraden van alle verouderde pakketten; gelieve te wachten en het programma "
+"niet te sluiten..."
+
+msgid "Running wpkg; please wait and don't close the program..."
+msgstr ""
+"WPKG wordt uitgevoerd; gelieve te wachten en het programma niet te sluiten..."
+
+msgid "Sending all output by mail to %s..."
+msgstr "Alle output wordt verstuurd naar %s..."
+
+msgid "Mail sent to %s."
+msgstr "Mail verstuurd naar %s."
+
+msgid "Less detail"
+msgstr "Minder detail"
+
+msgid ""
+"(before upgrading, please close the listed outdated applications to prevent "
+"problems.)"
+msgstr ""
+"(sluit aub de toepassingen die hieronder opgelijst staan alvorens de upgrade "
+"te starten.)"
+
+msgid "Outdated packages:"
+msgstr "Verouderde pakketten:"
+
+msgid "Upgrade packages"
+msgstr "Upgrade pakketten"
+
+msgid "Run WPKG"
+msgstr "Voer WPKG uit"
+
+msgid "(please run WPKG now - it will take only a few seconds.)"
+msgstr "(voer aub WPKG uit - het zal maar een paar seconden duren.)"
+
+msgid "Upgrade result:"
+msgstr "Upgrade resultaat:"
+
+msgid "(only errors are displayed below)"
+msgstr "(alleen fouten worden hieronder weergegeven)"
+
+msgid "WPKG result:"
+msgstr "WPKG resultaat:"
+
+msgid "Report upgrade problems by mail"
+msgstr "Rapporteer upgrade problemen per e-mail"
+
+msgid "Total: {} package(s)"
+msgstr "Totaal: {} pakket(ten)"
+
+msgid ""
+"GitExtensions will be updated.  Due to some problem with the installer, "
+"explorer.exe may be killed during the upgrade and restarted after the "
+"upgrade of all packages has completed.  Your taskbar and desktop icons may "
+"be unavailable till all upgrades have been completed."
+msgstr ""
+"GitExtensions wordt bijgewerkt.  Vanwege een probleem met het "
+"installatieprogramma kan Explorer. exe worden afgesloten tijdens de upgrade "
+"en opnieuw worden gestart nadat de upgrade van alle pakketten is voltooid.  "
+"De pictogrammen op de taakbalk en op het bureaublad zijn mogelijk niet "
+"beschikbaar totdat de upgrades zijn voltooid."
+
+msgid ""
+"Gitextensions has been upgraded and your taskbar may have disappeared.  If "
+"so, please press CTRL-SHIFT-ESC and from the File menu, start a new task "
+"explorer.exe . "
+msgstr ""
+"Gitextensions kreeg een upgrade.  Indien uw taakbalk verdwenen is, druk dan "
+"CTRL-SHIFT-ESC en start, via het Bestand menu, nieuwe taak uitvoeren, "
+"explorer.exe ."

@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"PO-Revision-Date: 2019-10-15 16:02+0200\n"
+"Last-Translator: Jürgen Depicker <jurgen.depicker@let.be>\n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"POT-Creation-Date: \n"
+
+msgid "Managed software upgrade report for %s"
+msgstr "Report aktualizácie softvéru pre %s"
+
+msgid "No packages to upgrade"
+msgstr "Žiadne balíky nepotrebujú aktualizáciu"
+
+msgid "SMTP connection failed; check your internet connection."
+msgstr "Pripojenie SMTP zlyhalo; Skontrolujte internetové pripojenie."
+
+msgid "Info"
+msgstr "Informácie"
+
+msgid "Packages to upgrade:"
+msgstr "Balíky na aktualizáciu:"
+
+msgid "Check for outdated packages"
+msgstr "Kontrola neaktuálnych balíkov"
+
+msgid "More detail"
+msgstr "Viac detailov"
+
+msgid "Quit"
+msgstr "Ukončiť"
+
+msgid "Checking for outdated packages; please wait..."
+msgstr "Prebieha kontrola neaktuálnych balíkov, prosím čakajte..."
+
+msgid ""
+"Upgrading all outdated packages; please wait and don't close the program..."
+msgstr ""
+"Prebieha aktualizácia balíkov, prosím čakajte a nezatvárajte applikáciu..."
+
+msgid "Running wpkg; please wait and don't close the program..."
+msgstr "Spúštanie wpkg,  prosím čakajte a nezatvárajte applikáciu..."
+
+msgid "Sending all output by mail to %s..."
+msgstr "Posielanie výstupov na adresu %s..."
+
+msgid "Mail sent to %s."
+msgstr "Mail poslaný na adresu %s."
+
+msgid "Less detail"
+msgstr "Menej detailov"
+
+msgid ""
+"(before upgrading, please close the listed outdated applications to prevent "
+"problems.)"
+msgstr "(pred aktualizáciou prosím zavriťe aplikácie zo zoznamu)"
+
+msgid "Outdated packages:"
+msgstr "Neaktuálne balíky:"
+
+msgid "Upgrade packages"
+msgstr "Aktualizácia balíkov"
+
+msgid "Run WPKG"
+msgstr "Spúšťanie WPKG"
+
+msgid "(please run WPKG now - it will take only a few seconds.)"
+msgstr "(prosím spustite WPKG teraz - bute to trvať iba pár sekúnd.)"
+
+msgid "Upgrade result:"
+msgstr "Výsledky aktualizácie:"
+
+msgid "(only errors are displayed below)"
+msgstr "(zobrazia sa len chyby nižšie)"
+
+msgid "WPKG result:"
+msgstr "WPKG výsledok:"
+
+msgid "Report upgrade problems by mail"
+msgstr "Nahlásenie problémov s inováciou poštou"
+
+msgid "Total: {} package(s)"
+msgstr "Počet balíkov: {}"
+
+msgid ""
+"GitExtensions will be updated.  Due to some problem with the installer, "
+"explorer.exe may be killed during the upgrade and restarted after the "
+"upgrade of all packages has completed.  Your taskbar and desktop icons may "
+"be unavailable till all upgrades have been completed."
+msgstr ""
+"GitExtensions budú aktualizované.  Vzhľadom k určitému problému s "
+"inštalátorom, Explorer.exe môže byť zastavený počas aktualizácie a "
+"reštartuje sa po dokončení aktualizácie všetkých balíkov.  Ikony na paneli "
+"úloh a na pracovnej ploche nemusia byť k dispozícii, kým sa nedokončí "
+"aktualizácia."
+
+msgid ""
+"Gitextensions has been upgraded and your taskbar may have disappeared.  If "
+"so, please press CTRL-SHIFT-ESC and from the File menu, start a new task "
+"explorer.exe . "
+msgstr ""
+"Gitextensions bol aktualizovaný a váš panel úloh mohol zmiznúť. Ak sa to tak "
+"stalo, stlačte CTRL-SHIFT-ESC a z menu Súbor spustite novú úlohu explorer.exe"

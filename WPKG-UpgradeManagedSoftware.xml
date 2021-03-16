@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<packages:packages
+        xmlns:packages="http://www.wpkg.org/packages" xmlns:wpkg="http://www.wpkg.org/wpkg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.wpkg.org/packages ../xsd/packages.xsd" >
+
+<package  id="LET_run_as_rob"
+          name="LET Run as Admin Tools"
+          revision="%PKG_VERSION%"
+          reboot="false"
+          priority="10">   
+
+<chain package-id="UpgradeManagedSoftware"/>          
+
+<!-- 
+
+ all .lnk files will be added to the LET submenu of windows's start menu 
+ 
+ in case of troubles launching runasrob, check https://www.ghacks.net/2018/12/29/windows-10-user-profile-service-event-id-1534-warnings/ and delete two TDL keys.
+ setacl -on "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileNotification" -ot reg -rec yes -actn setowner -ownr n:Administrators
+
+setacl -on "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\ProfileNotification" -ot reg -rec yes -actn setowner -ownr n:Administrators
+
+Next, use the reg command to delete the offending keys. Dont panic if you get an error saying they dont exist. 
+
+REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileNotification\TDL" /v CLSID /f 
+
+REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\ProfileNotification\TDL" /v CLSID /f  
+
+  -->
+  
+  <variable name="PKG_VERSION" value="201907051120" />  
+  <variable name="PKG_SOURCE"         value="%SOFTWARE%\RunAsRob\LET"/>      
+  <variable name="PKG_DESTINATION" value="C:\Program Files\LET\RunAsRob" /> 
+  <variable name="PKG_TRACER" value="%PKG_DESTINATION%\LET-RunAsRob" /> <!-- file tracing installation of package -->
+  <check type="logical" condition="or">
+    <check type="file" condition="exists" path="%PKG_TRACER%%PKG_VERSION%"/>			
+  </check>
+    
+  <install cmd='cmd /c mkdir "%PKG_DESTINATION%"'><exit code='0' /><exit code='1' /></install>  
+  <install cmd='cmd /c xcopy  /r /e /h /s /c /y "%PKG_SOURCE%\*.*" "%PKG_DESTINATION%"'/>
+  <install cmd='cmd /c assoc .xus=RunasRob.1' />
+  <install cmd='cmd /c ftype RunasRob.1="%PKG_DESTINATION%\runasrob.exe" "%1"' />
+  <install cmd='cmd /c "%PKG_DESTINATION%\runasrob.exe" /uninstall /quiet'/>
+  <install cmd='cmd /c "%PKG_DESTINATION%\runasrob.exe" /install /quiet'/>
+  
+  <install cmd='cmd /c if exist "%Public%\Desktop" copy /y "%PKG_SOURCE%\Upgrade_LET_managed_software.lnk" "%Public%\desktop"'/><!-- Vista/Windows7 -->
+  <install cmd='cmd /c if exist "%AllUsersProfile%\Desktop" copy /y "%PKG_SOURCE%\Upgrade_LET_managed_software.lnk" "%AllUsersProfile%\desktop"'/>
+  <install cmd='%ComSpec% /c if not exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" mkdir "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET"' />
+  <install cmd='%ComSpec% /c if exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" copy /y "%PKG_SOURCE%\*.lnk" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET\"' ><exit code="any"/></install>
+  
+  <install cmd='cmd /c echo "%PKG_VERSION%" > "%PKG_TRACER%%PKG_VERSION%"'/>
+      
+  <upgrade cmd='cmd /c del "%PKG_TRACER%*"'><exit code='0' /><exit code='1' /></upgrade>
+  <upgrade include="install" />
+  
+  <remove cmd='%ComSpec% /c if exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" del /f /q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='%ComSpec% /c if exist "%Public%\desktop" del /f /q "c:\users\public\desktop\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='%ComSpec% /c if exist "%AllUsersProfile%\desktop" del /f /q "c:\users\public\desktop\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='cmd /c del "%PKG_DESTINATION%\*.*"'><exit code="any"/></remove>
+  <remove cmd='cmd /c del "%PKG_TRACER%*"'><exit code='0' /><exit code='any' /></remove>
+  
+</package>
+<package  id="UpgradeManagedSoftware"
+          name="User application to upgrade LET managed software"
+          revision="%PKG_VERSION%"
+          reboot="false"
+          priority="10">        
+  
+  <variable name="PKG_VERSION" value="201907051241" />  
+  <variable name="PKG_SOURCE"         value="%SOFTWARE%\RunAsRob\UpgradeManagedSoftware"/>      
+  <variable name="PKG_DESTINATION" value="C:\Program Files\LET\UpgradeManagedSoftware" /> 
+  <variable name="PKG_TRACER" value="%PKG_DESTINATION%\LET-UpgradeManagedSoftware" /> <!-- file tracing installation of package -->
+  <check type="logical" condition="or">
+    <check type="file" condition="exists" path="%PKG_TRACER%%PKG_VERSION%"/>			
+  </check>
+    
+  <install cmd='cmd /c mkdir "%PKG_DESTINATION%"'><exit code='0' /><exit code='1' /></install>  
+  <install cmd='cmd /c xcopy  /r /e /h /s /c /y "%PKG_SOURCE%\*.*" "%PKG_DESTINATION%"'/>
+  <install cmd='%ComSpec% /c if exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp" copy /y "%PKG_SOURCE%\UpgradeManagedSoftwareTaskScheduler.EXE" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\"' ><exit code="any"/></install>
+  <install cmd='cmd /c if exist "%Public%\Desktop" copy /y "%PKG_SOURCE%\Upgrade_LET_managed_software.lnk" "%Public%\desktop"'/><!-- Vista/Windows7 -->
+  <install cmd='cmd /c if exist "%AllUsersProfile%\Desktop" copy /y "%PKG_SOURCE%\Upgrade_LET_managed_software.lnk" "%AllUsersProfile%\desktop"'/>
+  <install cmd='%ComSpec% /c if not exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" mkdir "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET"' />
+  <install cmd='%ComSpec% /c if exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" copy /y "%PKG_SOURCE%\*.lnk" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET\"' ><exit code="any"/></install>
+  
+  <install cmd='cmd /c echo "%PKG_VERSION%" > "%PKG_TRACER%%PKG_VERSION%"'/>
+      
+  <upgrade cmd='cmd /c del "%PKG_TRACER%*"'><exit code='0' /><exit code='1' /></upgrade>
+  <upgrade include="install" />
+  
+  <remove cmd='%ComSpec% /c if exist "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET" del /f /q "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\LET\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='%ComSpec% /c if exist "%Public%\desktop" del /f /q "c:\users\public\desktop\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='%ComSpec% /c if exist "%AllUsersProfile%\desktop" del /f /q "c:\users\public\desktop\Upgrade_LET_managed_software.lnk"' ><exit code="any"/></remove>
+  <remove cmd='cmd /c del "%PKG_DESTINATION%\*.*"'><exit code="any"/></remove>
+  <remove cmd='cmd /c del "%PKG_TRACER%*"'><exit code='0' /><exit code='any' /></remove>  
+</package>
+
+
+<install cmd='schtasks /create /ru SYSTEM /sc ONCE /st 00:00 /tn "RunAsAdminWin32DiskImager" /f /tr "%PKG_DESTINATION%\RunAsAdminWin32DiskImager.exe" /interactive' />
+  <!--
+  sc = schedule
+  tn = task name
+  st = start time
+  /F force
+  
+  
+  
+  --> 
+  
+  <install cmd='schtasks /create /f /tn "RunAsAdminWin32DiskImager" /xml "\\file01\INSTALL\SERVICE\LET-tools\RunAsAdminTasks\RunAsAdminWin32DiskImager\RunAsAdminWin32DiskImager.xml"'/>
+  <install cmd='cmd /c echo "%PKG_VERSION%" > "%PKG_TRACKER%_%PKG_VERSION%"'/>
+    
+  <upgrade include="install" />
+  
+  <remove cmd='schtasks /delete /tn "RunAsAdminWin32DiskImager" /f' />
+
+
+
+</packages:packages> 

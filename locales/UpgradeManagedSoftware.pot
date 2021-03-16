@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-10-15 16:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: UpgradeManagedSoftware.py:52
+msgid "Managed software upgrade report for %s"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:56
+msgid "No packages to upgrade"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:138
+msgid "SMTP connection failed; check your internet connection."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:138 UpgradeManagedSoftware.py:542
+#: UpgradeManagedSoftware.py:549
+msgid "Info"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:172
+msgid "Packages to upgrade:"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:186
+msgid "Check for outdated packages"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:189 UpgradeManagedSoftware.py:281
+msgid "More detail"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:191
+msgid "Quit"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:253 UpgradeManagedSoftware.py:315
+msgid "Checking for outdated packages; please wait..."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:257
+msgid "Upgrading all outdated packages; please wait and don't close the program..."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:261
+msgid "Running wpkg; please wait and don't close the program..."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:265
+msgid "Sending all output by mail to %s..."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:268
+msgid "Mail sent to %s."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:278
+msgid "Less detail"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:326
+msgid "(before upgrading, please close the listed outdated applications to prevent problems.)"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:326
+msgid "Outdated packages:"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:332
+msgid "Upgrade packages"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:334 UpgradeManagedSoftware.py:343
+msgid "Run WPKG"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:337
+msgid "(please run WPKG now - it will take only a few seconds.)"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:337
+msgid "Upgrade result:"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:347
+msgid "(only errors are displayed below)"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:347
+msgid "WPKG result:"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:353
+msgid "Report upgrade problems by mail"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:501
+msgid "Total: {} package(s)"
+msgstr ""
+
+#: UpgradeManagedSoftware.py:542
+msgid "GitExtensions will be updated.  Due to some problem with the installer, explorer.exe may be killed during the upgrade and restarted after the upgrade of all packages has completed.  Your taskbar and desktop icons may be unavailable till all upgrades have been completed."
+msgstr ""
+
+#: UpgradeManagedSoftware.py:549
+msgid "Gitextensions has been upgraded and your taskbar may have disappeared.  If so, please press CTRL-SHIFT-ESC and from the File menu, start a new task explorer.exe . "
+msgstr ""
+
